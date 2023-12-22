@@ -1,20 +1,20 @@
+import Lottie from "lottie-react";
+import todo from "../../assets/todo.json";
 const Banner = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-[#f7d8a3]">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-            className="max-w-sm rounded-lg shadow-2xl"
-          />
+          <Lottie animationData={todo}></Lottie>
           <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
+            <h1 className="text-5xl font-bold">Task Management Platform</h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Empower Your Productivity: Seamless Task Management Platform for
+              Effortless Progress!
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn bg-[#001C30] text-white hover:text-[#001C30]">
+              Let’s Explore
+            </button>
           </div>
         </div>
       </div>
