@@ -1,10 +1,16 @@
+import { Link, NavLink } from "react-router-dom";
+
 const Navber = () => {
   return (
     <div>
       <div className="navbar bg-[#001C30] text-[#fff] shadow-lg w-full">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div className="dropdown bg-[#001C30] text-[#fff]">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -22,31 +28,71 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="bg-[#001C30] text-[#fff] menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <NavLink
+                  to="/"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-[#f7d8a3]"
+                      : ""
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <a>Parent</a>
+                <a>Contact</a>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>About</a>
               </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">SCC Technovision Inc.</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex bg-[#001C30] text-[#fff] ">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-[#f7d8a3]"
+                    : ""
+                }
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <a></a>
+              <Link
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-[#f7d8a3]"
+                    : ""
+                }
+              >
+                Contact
+              </Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? " text-[#f7d8a3] " : ""
+                }
+              >
+                About
+              </Link>
             </li>
           </ul>
         </div>
