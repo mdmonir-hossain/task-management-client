@@ -7,7 +7,7 @@ const AboutUs = () => {
         <div className="hero ">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Contact Us</h1>
+              <h1 className="text-5xl font-bold">About Us</h1>
               <p className="py-6">
                 Welcome to SCC Task Manager , where
                 productivity meets simplicity. Our journey began with a simple
