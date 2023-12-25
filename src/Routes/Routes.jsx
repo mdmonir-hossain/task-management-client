@@ -10,6 +10,9 @@ import PrivateRoute from "./PrivateRouter";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Addtask from "../Pages/Addtask/Addtask";
 import TaskManager from "../Pages/TaskManager/TaskManager";
+import ToDo from "../Pages/Dashboard/ToDo";
+import Ongoing from "../Pages/Dashboard/Ongoing";
+import Completed from "../Pages/Dashboard/Completed";
 
 const Routes = createBrowserRouter([
   {
@@ -61,6 +64,31 @@ const Routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <TaskManager></TaskManager>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/addtask"),
+      },
+      {
+        path: "todo",
+        element: (
+          <PrivateRoute>
+            <ToDo></ToDo>
+          </PrivateRoute>
+        )
+      },
+      {
+        path: "ongoing",
+        element: (
+          <PrivateRoute>
+            <Ongoing></Ongoing>
+          </PrivateRoute>
+        )
+      },
+      {
+        path: "completed",
+        element: (
+          <PrivateRoute>
+            <Completed></Completed>
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/addtask"),

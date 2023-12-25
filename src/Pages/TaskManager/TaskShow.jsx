@@ -6,13 +6,17 @@ const TaskShow = ({ task }) => {
     return (
       <div>
         <div className="card  bg-base-100 shadow-xl">
-                <div className="card-body">
-                    
-            <h2 className="card-title">Title: {title}</h2>
-            <p>Category: {category}</p>
-            <div className="card-actions justify-center">
-              <h2 className="card-title">Description: {description}</h2>
-              <h2 className="card-title">Priority: {priority}</h2>
+          <div className="card-body">
+            <div className="flex gap-4">
+              <div>Title: {title}</div>
+              <div>Deadline: {deadline}</div>
+            </div>
+            <div className="flex gap-4">
+              <div>Description:{description}</div>
+            </div>
+            <div className="flex gap-4">
+              <div>Priority: {priority}</div>
+              <div>Category: {category}</div>
             </div>
           </div>
         </div>
