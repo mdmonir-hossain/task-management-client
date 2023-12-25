@@ -55,13 +55,13 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="bg-[#F7D8A3] min-h-screen">
       <ToastContainer></ToastContainer>
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}
         transition={{ duration: 1, type: "spring", stiffness: 60 }}
-        className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-center items-center"
+        className="grid grid-cols-1  lg:grid-cols-2 md:grid-cols-2 justify-center items-center"
       >
         <Helmet>
           <title> Sign Up</title>
@@ -82,6 +82,7 @@ const SignUp = () => {
                 id="name"
                 type="text"
                 placeholder="Your Name"
+                className="input input-bordered w-full "
                 required
               />
             </div>
@@ -93,6 +94,7 @@ const SignUp = () => {
                 id="email1"
                 type="email"
                 placeholder="Your email"
+                className="input input-bordered w-full "
                 name="email"
                 required
               />
@@ -105,6 +107,7 @@ const SignUp = () => {
                 id="password1"
                 type="password"
                 name="password"
+                className="input input-bordered w-full "
                 required
               />
             </div>
@@ -117,15 +120,18 @@ const SignUp = () => {
                 id="photo"
                 type="text"
                 placeholder="Your photo URL"
+                className="input input-bordered w-full "
                 required
               />
             </div>
-            <button type="submit">Sign Up</button>
+            <button type="submit" className="btn bg-[#001C30] text-white ">
+              Sign Up
+            </button>
           </form>
           <hr className="w-3/4 mt-2" />
           <div className="flex gap-4 mt-2">
             <h1>Alraedy Account?</h1>
-            <Link to="/Login" className="text-sky-500">
+            <Link to="/login" className="text-sky-500 ">
               Sign in
             </Link>
           </div>
@@ -135,8 +141,8 @@ const SignUp = () => {
           animate={{ x: 0 }}
           transition={{ duration: 2, type: "tween" }}
           className="flex-1"
-        >
-          
+              >
+                  <img src="https://i.ibb.co/PmJRGHZ/sign-up.png" className="w-3/4"/>
         </motion.div>
       </motion.div>
     </div>
