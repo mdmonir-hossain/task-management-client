@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { ToastContainer, Swal } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Addtask = () => {
-  const { SubmitData, register } = useForm();
+  const { handleSubmit, register } = useForm();
   const { user } = useContext(AuthContext);
-  const handleAddtask = (taskData) => {
-    const { title, deadline, description, priority, category } = taskData;
+  const onSubmit = (data) => {
+    const { title, deadline, description, priority, category } = data;
     const email = user?.email;
     const status = "to-do";
     const NewtaskData = {
@@ -31,18 +31,13 @@ const Addtask = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Task Added Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
+          toast("Task Added Successfully");
         }
       });
   };
   return (
     <div className="card w-full max-w-md shadow-2xl bg-base-100">
-      <form className="card-body" onSubmit={handleAddtask(SubmitData)}>
+      <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Task TiTle</span>
@@ -107,7 +102,7 @@ const Addtask = () => {
 
         <button
           type="submit"
-          className="btn bg-[#001C30] text-white hover:text-black hover:bg-gray-400 mt-4"
+          className="btn bg-[#001C30] text-white hover:text-black"
         >
           Add Task
         </button>
