@@ -1,16 +1,28 @@
 import Lottie from "lottie-react";
 import todo from "../../assets/todo.json";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const Banner = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-[#f7d8a3] ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="https://i.ibb.co/mTM8Mm3/task-manager-bg.png"
+          <motion.div
             className="lg:w-1/2"
-          />
-          <div>
+            initial={{ x: "100vh" }}
+            animate={{ x: 0 }}
+            transition={{ type: "spring", duration: 1, stiffness: 60 }}
+          >
+            <img
+              src="https://i.ibb.co/mTM8Mm3/task-manager-bg.png"
+              
+            />
+          </motion.div>
+          <motion.div
+            initial={{ x: "-100vh" }}
+            animate={{ x: 0 }}
+            transition={{ type: "spring", duration: 1, stiffness: 60 }}
+          >
             <h1 className="text-5xl font-bold lg:text-left text-center ">
               Task Management Platform
             </h1>
@@ -23,7 +35,7 @@ const Banner = () => {
                 Let’s Explore
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

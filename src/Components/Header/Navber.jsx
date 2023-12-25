@@ -45,8 +45,20 @@ const Navber = () => {
                 </NavLink>
               </li>
               <li>
-                <a>Contact</a>
+                <NavLink
+                  to="/contactus"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-[#f7d8a3]"
+                      : ""
+                  }
+                >
+                  Contact
+                </NavLink>
               </li>
+              
               <li>
                 <a>About</a>
               </li>
@@ -57,7 +69,7 @@ const Navber = () => {
         <div className="navbar-center hidden lg:flex bg-[#001C30] text-[#fff] ">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link
+              <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
                   isPending
@@ -68,21 +80,21 @@ const Navber = () => {
                 }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/"
+              <NavLink
+                to="/contactus"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
                     : isActive
-                    ? "border-b-2 border-[#f7d8a3]"
+                    ? "border-b-2 border-[#f7d8a3] text-[#fff]"
                     : ""
                 }
               >
                 Contact
-              </Link>
+              </NavLink>
             </li>
             <li>
               <Link
