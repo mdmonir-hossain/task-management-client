@@ -58,9 +58,19 @@ const Navber = () => {
                   Contact
                 </NavLink>
               </li>
-              
               <li>
-                <a>About</a>
+                <NavLink
+                  to="/aboutus"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-[#f7d8a3]"
+                      : ""
+                  }
+                >
+                  About
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -89,7 +99,7 @@ const Navber = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "border-b-2 border-[#f7d8a3] text-[#fff]"
+                    ? "border-b-2 border-[#f7d8a3]"
                     : ""
                 }
               >
@@ -97,14 +107,18 @@ const Navber = () => {
               </NavLink>
             </li>
             <li>
-              <Link
-                to="/"
+              <NavLink
+                to="/aboutus"
                 className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? " text-[#f7d8a3] " : ""
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-[#f7d8a3]"
+                    : ""
                 }
               >
                 About
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

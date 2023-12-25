@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <div>
       <div className=" bg-[#F7D8A3] min-h-screen ">
-        <div className="hero mb-10  ">
+        <div className="hero ">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="text-center lg:text-left">
               <h1 className="text-5xl font-bold">Contact Us</h1>
@@ -42,8 +42,8 @@ const AboutUs = () => {
                 let's make every task count!
               </p>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <img src="https://i.ibb.co/m9czVR4/about-us.png" />
+            <div className="card flex-shrink-0 w-1/2 shadow-2xl bg-base-100">
+              <img src="https://i.ibb.co/m9czVR4/about-us.png"  />
             </div>
           </div>
         </div>
