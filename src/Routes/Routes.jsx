@@ -8,6 +8,7 @@ import AboutUs from "../Pages/AboutUs/AboutUs";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRouter";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Addtask from "../Pages/Addtask/Addtask";
 
 const Routes = createBrowserRouter([
   {
@@ -50,7 +51,7 @@ const Routes = createBrowserRouter([
         path: "taskadd",
         element: (
           <PrivateRoute>
-            <Dashboard></Dashboard>
+            <Addtask></Addtask>
           </PrivateRoute>
         ),
       },

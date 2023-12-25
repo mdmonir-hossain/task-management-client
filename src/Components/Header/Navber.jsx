@@ -86,6 +86,20 @@ const Navber = () => {
                   About
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/dashboard"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-[#f7d8a3]"
+                      : ""
+                  }
+                >
+                  DashBoard
+                </NavLink>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">SCC Technovision Inc.</a>
@@ -132,6 +146,20 @@ const Navber = () => {
                 }
               >
                 About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dashboard"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-[#f7d8a3]"
+                    : ""
+                }
+              >
+                DashBoard
               </NavLink>
             </li>
           </ul>
