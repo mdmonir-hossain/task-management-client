@@ -96,7 +96,7 @@ const Login = () => {
                 />
               </div>
             </div>
-            <button type="submit">Log in</button>
+            <button type="btn submit bg-[#001C30]">Log in</button>
           </form>
           <hr className="w-3/4 mt-2" />
           <div className="flex gap-4 mt-2">
