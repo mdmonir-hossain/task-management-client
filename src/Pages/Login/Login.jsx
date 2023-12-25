@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 
-
 import { signInWithPopup } from "firebase/auth";
 
 import { motion } from "framer-motion";
@@ -54,44 +53,48 @@ const Login = () => {
     <div>
       <ToastContainer></ToastContainer>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-center items-center">
+      <div className=" bg-[#F7D8A3] min-h-screen grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-center items-center">
         <Helmet>
           <title> Log in </title>
         </Helmet>
         <motion.div
-          initial={{ y: "-100vh" }}
-          animate={{ y: 0 }}
+          initial={{ x: "-100vh" }}
+          animate={{ x: 0 }}
           transition={{ type: "spring", duration: 1, stiffness: 60 }}
-          className="flex-1 lg:ml-3 lg:px-10 lg:py-20 justify-center items-center border-2  border-[#7BCCFF] rounded-lg "
+          className="flex-1 lg:ml-3 lg:px-10 lg:py-20 border-2 border-[#001C30] justify-center items-center rounded-lg "
         >
           <h1 className="text-3xl text-center">Log In</h1>
           <form
             onSubmit={handleUserSignin}
             className="flex max-w-md flex-col gap-4"
           >
-            <div>
-              <div className="mb-2 block">
-                <label htmlFor="email1" value="Your email" />
-              </div>
+            <div className="flex flex-col justify-center items-center  ">
+              <div>
+                <div className="mb-2 block">
+                  <label htmlFor="email1" value="Your email" />
+                </div>
 
-              <input
-                id="email1"
-                type="email"
-                placeholder="Your email"
-                name="email"
-                required
-              />
-            </div>
-            <div>
-              <div className="mb-2 block">
-                <label htmlFor="password1" value="Your password" />
+                <input
+                  id="email1"
+                  type="email"
+                  placeholder="Your email"
+                  name="email"
+                  className="input input-bordered w-full max-w-xs"
+                  required
+                />
               </div>
-              <input
-                id="password1"
-                type="password"
-                name="password" className="border"
-                required
-              />
+              <div>
+                <div className="mb-2 block">
+                  <label htmlFor="password1" value="Your password" />
+                </div>
+                <input
+                  id="password1"
+                  type="password"
+                  name="password"
+                  className="input input-bordered w-full max-w-xs"
+                  required
+                />
+              </div>
             </div>
             <button type="submit">Log in</button>
           </form>
@@ -132,15 +135,20 @@ const Login = () => {
               </svg>
             </button>
           </div>
-          <div className="flex gap-4 mt-2">
+          <div className="flex justify-center items-center gap-4 mt-2">
             <h1>Don't have Account?</h1>
             <Link to="/SignUp" className="text-sky-500">
               Sign UP
             </Link>
           </div>
         </motion.div>
-        <motion.div className="flex-1">
-          
+        <motion.div
+          className="flex-1 lg:ml-3 lg:px-10 lg:py-20 justify-center items-center rounded-lg"
+          initial={{ x: "100vh" }}
+          animate={{ x: 0 }}
+          transition={{ type: "spring", duration: 1, stiffness: 60 }}
+        >
+          <img src="https://i.ibb.co/wNG6Rx4/login.png" />
         </motion.div>
       </div>
     </div>
