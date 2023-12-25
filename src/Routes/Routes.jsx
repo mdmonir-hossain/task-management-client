@@ -66,7 +66,8 @@ const Routes = createBrowserRouter([
             <TaskManager></TaskManager>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/addtask"),
+        loader: () =>
+          fetch("https://task-management-server-mu-gules.vercel.app/addtask"),
       },
       {
         path: "todo",
@@ -74,7 +75,7 @@ const Routes = createBrowserRouter([
           <PrivateRoute>
             <ToDo></ToDo>
           </PrivateRoute>
-        )
+        ),
       },
       {
         path: "ongoing",
@@ -82,7 +83,7 @@ const Routes = createBrowserRouter([
           <PrivateRoute>
             <Ongoing></Ongoing>
           </PrivateRoute>
-        )
+        ),
       },
       {
         path: "completed",
@@ -91,7 +92,8 @@ const Routes = createBrowserRouter([
             <Completed></Completed>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/addtask"),
+        loader: () =>
+          fetch("https://task-management-server-mu-gules.vercel.app/addtask"),
       },
     ],
   },
