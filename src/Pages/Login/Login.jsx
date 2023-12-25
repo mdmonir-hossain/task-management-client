@@ -98,15 +98,24 @@ const Login = () => {
                 />
               </div>
             </div>
-            <button type="btn submit bg-[#001C30]">Log in</button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="btn bg-[#001C30] text-white w-1/2 "
+              >
+                Log in
+              </button>
+            </div>
           </form>
           <hr className="w-3/4 mt-2" />
           <div className="flex gap-4 mt-2">
             <button
-              className="btn w-1/3"
+              className="btn w-1/3 text-black"
               color="gray"
               onClick={handleGoogleUserSingin}
             >
+              {" "}
+              Google
               <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
@@ -121,7 +130,9 @@ const Login = () => {
                 />
               </svg>
             </button>
-            <button className="btn w-1/3" color="gray">
+            <button className="btn w-1/3 text-black" color="gray">
+              {" "}
+              Github
               <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
