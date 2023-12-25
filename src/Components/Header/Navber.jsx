@@ -1,12 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navber = () => {
   const { user, signOutUser, theme, toggle } = useContext(AuthContext);
+   const navigate = useNavigate();
   const handleLogOut = () => {
     signOutUser()
       .then((result) => {
+        navigate(location?.state ? location.state : "/");
         console.log(result.user);
       })
       .catch((error) => {
@@ -134,20 +136,18 @@ const Navber = () => {
             </li>
           </ul>
         </div>
-        
-          <div className="navbar-end gap-3">
-            {user?.displayName}
-            <img className="w-5 rounded-full" src={user?.photoURL} />
-            {user ? (
-              <button onClick={handleLogOut}>LogOut</button>
-            ) : (
-              <div>
-                <Link to="/login">Log in</Link> |
-                <Link to="/signup">Register</Link>
-              </div>
-            )}
-          </div>
-        
+
+        <div className="navbar-end gap-3">
+          {user?.displayName}
+          <img className="w-5 rounded-full" src={user?.photoURL} />
+          {user ? (
+            <button onClick={handleLogOut}>LogOut</button>
+          ) : (
+            <div>
+              <Link to="/login">Log in</Link> |<Link to="/signup">Sign Up</Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const User = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">Developr</h2>
+              <h2 className="card-title">Developer</h2>
             </div>
           </div>
         </div>

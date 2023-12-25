@@ -22,6 +22,7 @@ const Login = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
+        navigate(location?.state ? location.state : "/dashboard");
         console.log(user);
       })
       .catch((error) => {
@@ -34,10 +35,11 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/dashboard");
         if (result.user) {
           toast("User Login successfully");
         }
