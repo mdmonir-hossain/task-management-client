@@ -9,6 +9,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRouter";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Addtask from "../Pages/Addtask/Addtask";
+import TaskManager from "../Pages/TaskManager/TaskManager";
 
 const Routes = createBrowserRouter([
   {
@@ -54,6 +55,15 @@ const Routes = createBrowserRouter([
             <Addtask></Addtask>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "taskmanager",
+        element: (
+          <PrivateRoute>
+            <TaskManager></TaskManager>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/addtask"),
       },
     ],
   },
